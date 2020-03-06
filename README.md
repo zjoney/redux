@@ -75,7 +75,14 @@ const store = createStore(reducer);
 
 store.subscribe(listener);
 ```
-
+#### 解除监听：
+store.subscribe方法返回一个函数，调用这个函数就可以解除监听。
+```javascript
+let unsubscribe = store.subscribe(() =>
+  console.log(store.getState())
+);
+unsubscribe();
+```
 
 In the project directory, you can run:
 
