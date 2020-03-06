@@ -89,7 +89,26 @@ getState方法可以获取返回当前state的值，可以在任意位置打印s
 ```javascript
 console.log(store.getState());
 ```
-# Redux工作流程
+### Effect提供的具体方法
+介绍几个Effect中常用的几个方法，从低阶的API，比如take，call(apply)，fork，put，select等，以及高阶API，比如takeEvery和takeLatest等
+
+```javascript
+import {take,call,put,select,fork,takeEvery,takeLatest} from 'redux-saga/effects'
+```
+- take 
+
+- call
+
+- put 
+
+- select 
+
+- fork
+
+- takeEvery
+
+- takeLatest
+
 
 In the project directory, you can run:
 
