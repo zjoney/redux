@@ -107,6 +107,14 @@ const loginAction = {
    type:'login'
 }
 ```
+在UI Component中dispatch一个action:
+```javascript
+dispatch(loginAction)
+```
+在saga中使用：
+```javascript
+const action = yield take('login');
+```
 
 - call
 
