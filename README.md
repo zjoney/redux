@@ -23,6 +23,40 @@ const action = {
  payload: 'Learn Redux'
 };
 ```
+# reducer：
+
+Reducer 函数最重要的特征是，它是一个纯函数。也就是说，只要是同样的输入，必定得到同样的输出。
+
+纯函数是函数式编程的概念，必须遵守以下一些约束，比如：
+①不得改写参数
+②不能调用系统 I/O 的API
+③不能调用Date.now()或者Math.random()等不纯的方法，因为每次会得到不一样的结果
+```javascript
+const reducer = (state = 0, action) => {
+    switch (action.type) {
+        case 'INCREMENT': return state + 1;
+        case 'DECREMENT': return state - 1;
+        default: return state;
+    }
+};
+```
+# store：
+
+store就是把action和reducer联系到一起的对象，store本质上是一个状态树，保存了所有对象的状态。任何UI组件都可以直接从store访问特定对象的状态，其具有dispatch，subscribe，getState方法
+
+```javascript
+import { createStore } from 'redux';
+const reducer = (state = 0, action) => {
+    switch (action.type) {
+        case 'INCREMENT': return state + 1;
+        case 'DECREMENT': return state - 1;
+        default: return state;
+    }
+};
+let store = createStore(reducer);
+export default store;
+```
+
 
 In the project directory, you can run:
 
