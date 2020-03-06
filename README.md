@@ -123,52 +123,58 @@ const action = yield take('login');
 }
 ```
 
-- call
+- call(apply)
+call 和 apply方法与js中的相似， 我们以call为例
 
 ```javascript
-const loginAction = {
-   type:'login'
-}
+call(fn, ...args);
+```
+call方法调用fn，参数为args，返回一个描述对象。不过这里call方法传入的函数fn可以是普通函数，也可以是generator。call执行函数，并且可以获取promise的数据。call方法应用很广泛，在redux-saga中使用异步请求等常用call方法来实现。
+
+```javascript
+yield call(fetch, '/userInfo',username );
 ```
 
 - put 
 
+put这个Effect方法跟redux原始的dispatch相似，都是可以发出action，且发出的action都会被reducer监听到。put的使用方法：
+
+
 ```javascript
-const loginAction = {
-   type:'login'
-}
+ yield put({type:'login'})
 ```
 
 - select 
 
+put方法与redux中的dispatch相对应，同样的如果我们想在中间件中获取state，那么需要使用select。select方法对应的是redux中的getState，用户获取store中的state，
+
 ```javascript
-const loginAction = {
-   type:'login'
-}
+const state= yield select()
 ```
 
 - fork
 
-```javascript
-const loginAction = {
-   type:'login'
-}
-```
+call操作是阻塞的，只有等promise回来后才能继续执行，而fork是非阻塞的 
 
 - takeEvery
 
+takeEvery和takeLatest用于监听相应的动作并执行相应的方法，是构建在take和fork上面的高阶api，比如要监听login动作，好用takeEvery方法可以：
+
 ```javascript
-const loginAction = {
-   type:'login'
-}
+takeEvery('login',loginFunc)
 ```
 
 - takeLatest
 
+作用同takeEvery一样，唯一的区别是它只关注最后，也就是最近一次发起的异步请求，如果上次请求还未返回，则会被取消。
+
 ```javascript
-const loginAction = {
-   type:'login'
+import { takeEvery } from 'redux-saga/effects'
+ 
+function* watchFetchData() {
+  yield takeEvery('FETCH_REQUESTED', fetchData)
 }
+
 ```
 
 
