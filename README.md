@@ -57,6 +57,25 @@ let store = createStore(reducer);
 export default store;
 ```
 
+## 1.store.dispatch()
+
+store.dispatch()是 View 发出 Action 的唯一方法，这就需要在View中引入store然后调用dispatch派发Action，dispatch一调用就会调用reducer来改变state从而改变View。一般写法如下：
+
+```javascript
+store.dispatch({type: "INCREMENT"})
+```
+
+## 2.store.subscribe()
+
+Store 允许使用store.subscribe方法设置监听函数，一旦 State 发生变化，就自动执行这个函数。
+
+```javascript
+import { createStore } from 'redux';
+const store = createStore(reducer);
+
+store.subscribe(listener);
+```
+
 
 In the project directory, you can run:
 
