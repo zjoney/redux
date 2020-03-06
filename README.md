@@ -96,18 +96,61 @@ console.log(store.getState());
 import {take,call,put,select,fork,takeEvery,takeLatest} from 'redux-saga/effects'
 ```
 - take 
+take这个方法，是用来监听action，返回的是监听到的action对象。比如：
+
+```javascript
+const loginAction = {
+   type:'login'
+}
+```
 
 - call
 
+```javascript
+const loginAction = {
+   type:'login'
+}
+```
+
 - put 
+
+```javascript
+const loginAction = {
+   type:'login'
+}
+```
 
 - select 
 
+```javascript
+const loginAction = {
+   type:'login'
+}
+```
+
 - fork
+
+```javascript
+const loginAction = {
+   type:'login'
+}
+```
 
 - takeEvery
 
+```javascript
+const loginAction = {
+   type:'login'
+}
+```
+
 - takeLatest
+
+```javascript
+const loginAction = {
+   type:'login'
+}
+```
 
 
 In the project directory, you can run:
