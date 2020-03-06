@@ -23,7 +23,7 @@ const action = {
  payload: 'Learn Redux'
 };
 ```
-# reducer：
+## reducer：
 
 Reducer 函数最重要的特征是，它是一个纯函数。也就是说，只要是同样的输入，必定得到同样的输出。
 
@@ -40,7 +40,7 @@ const reducer = (state = 0, action) => {
     }
 };
 ```
-# store：
+## store：
 
 store就是把action和reducer联系到一起的对象，store本质上是一个状态树，保存了所有对象的状态。任何UI组件都可以直接从store访问特定对象的状态，其具有dispatch，subscribe，getState方法
 
@@ -83,6 +83,13 @@ let unsubscribe = store.subscribe(() =>
 );
 unsubscribe();
 ```
+
+## 3.store.getState()
+getState方法可以获取返回当前state的值，可以在任意位置打印state的值如下：
+```javascript
+console.log(store.getState());
+```
+# Redux工作流程
 
 In the project directory, you can run:
 
