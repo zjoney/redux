@@ -28,9 +28,13 @@ const action = {
 Reducer 函数最重要的特征是，它是一个纯函数。也就是说，只要是同样的输入，必定得到同样的输出。
 
 纯函数是函数式编程的概念，必须遵守以下一些约束，比如：
+
 ①不得改写参数
+
 ②不能调用系统 I/O 的API
+
 ③不能调用Date.now()或者Math.random()等不纯的方法，因为每次会得到不一样的结果
+
 ```javascript
 const reducer = (state = 0, action) => {
     switch (action.type) {
