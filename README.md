@@ -115,6 +115,13 @@ dispatch(loginAction)
 ```javascript
 const action = yield take('login');
 ```
+可以监听到UI传递到中间件的Action,上述take方法的返回，就是dipath的原始对象。一旦监听到login动作，返回的action为：
+
+```javascript
+{
+  type:'login'
+}
+```
 
 - call
 
