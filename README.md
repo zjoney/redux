@@ -22,6 +22,7 @@ const action = {
  type: 'ADD_TODO',
  payload: 'Learn Redux'
 };
+```
 
 In the project directory, you can run:
 
